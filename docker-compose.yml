@@ -7,9 +7,10 @@ services:
     user: cardano
     working_dir: /home/cardano/cardano-sl/
     command: ./connect-explorer-to-mainnet
-    # volumes:
-    #   - ./cardano/db:/home/cardano/cardano-sl/state-explorer-mainnet/db
-    #   - ./cardano/state-wallet-mainnet:/home/cardano/cardano-sl/state-wallet-mainnet
+    # does not work with docker on windows
+    volumes:
+      - ./cardano/db:/home/cardano/cardano-sl/state-explorer-mainnet/db
+      # - ./cardano/state-wallet-mainnet:/home/cardano/cardano-sl/state-wallet-mainnet
     ports:
       - 8090:8090
       - 8100:8100
